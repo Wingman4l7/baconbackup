@@ -1,5 +1,5 @@
 var rest = require('restler') // for HTTP requests -- npm install restler : https://github.com/danwrong/Restler/
-  , fs   = require('fs');       // for logging
+  , fs   = require('fs');     // for logging
 
 var baseURL = 'http://www.reddit.com/user/'
   , user    = 'YOUR_HANDLE_HERE'
@@ -30,8 +30,8 @@ function writeToFile() {
 
 			fs.appendFileSync(user + fileName, '<font face="verdana" size="2">'); // deprecated!
 			fs.appendFileSync(user + fileName, date + '<BR>' 
-													+ subreddit + '<BR>'
-													+ '\n' + comment + '\n' + '<BR><BR>');
+							 	+ subreddit + '<BR>'
+								+ '\n' + comment + '\n' + '<BR><BR>');
 			fs.appendFileSync(user + fileName, '</font>'); // deprecated!
 		}
 	}
@@ -47,9 +47,9 @@ function onComplete(DATA, res) {
 		}, 2000);  // 2 second minimum as per Reddit's "be nice and don't hammer our servers" API rule.
 	}
 	else {
-		console.log('==finished; page count: ' + pages.length);
+		console.log('==> finished; page count: ' + pages.length);
 		writeToFile();
-		console.log('==done writing to file');
+		console.log('==> done writing to file');
 	}
 }
 
