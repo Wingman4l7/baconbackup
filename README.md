@@ -29,7 +29,7 @@ While obviously open-source, I have yet to decide which license this should be u
 [GPL]: http://www.gnu.org/licenses/licenses.html
 [Creative Commons]: http://creativecommons.org/licenses/
 
-## Origins & Credit Due ##
+### Origins & Credit Due ###
 
 Credit goes to [AlliedEnvy] for always being ready with a clever project name.
 [AlliedEnvy]: https://github.com/AlliedEnvy

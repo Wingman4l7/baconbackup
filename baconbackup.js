@@ -2,7 +2,7 @@ var rest = require('restler') // for HTTP requests -- npm install restler : http
   , fs   = require('fs');       // for logging
 
 var baseURL = 'http://www.reddit.com/user/'
-  , user    = 'Wingman4l7'
+  , user    = 'YOUR_HANDLE_HERE'
   , tail    = '/.json?'
   , limit   = 'limit=100'; // set to maximum, to limit page requests; default is 25
 
