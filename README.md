@@ -2,24 +2,22 @@ baconbackup
 ===========
 
 ### About ###
-Node.js tool for archiving a Reddit user's comments as an HTML file.
-
+[Node.js] tool for archiving a Reddit user's comments as an HTML file.
+[Node.js]: http://nodejs.org/
 Defaults to archiving the maximum number of comments viewable via a user's profile, which is currently 1000.
 
 Tested as working on Node.js v0.10.26.
 
-### How to Install ###
-This requires [Node.js].
-[node.js]: http://nodejs.org/
-
 ### How to Run ###
-Set the `user` variable to be the handle of the person whose comments you wish to archive.  To use, navigate to the installed directory and run this command:
+To use, navigate to the installed directory and run this command:
 
-	node baconbackup.js
-    
-### Speed ###
+    node baconbackup.js YOUR_USERNAME
+	
+### Speed & Options ###
 
 At a maximum of 1000 comments available, a maximum of 100 comments per page request, and a minimum of 2 seconds between page requests, the fastest a full backup can be done is **20 seconds**.
+
+You can optionally hard-code the `user` variable if you're going to repeatedly run baconbackup on the same user and don't want to have to keep typing their handle into the commandline.
     
 ### License ###
 While obviously open-source, I have yet to decide which license this should be under.  It will probably end up being under the [GPL] or some flavor of [Creative Commons].

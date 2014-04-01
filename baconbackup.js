@@ -2,7 +2,7 @@ var http = require('http') // for comment page requests
   , fs   = require('fs');     // for logging
 
 var baseURL = 'http://www.reddit.com/user/'
-  , user    = 'YOUR_HANDLE_HERE'
+  , user    = process.argv[2] // can be replaced with a single username
   , tail    = '/.json?'
   , limit   = 'limit=100'; // set to maximum, to limit page requests; default is 25
 
