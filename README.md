@@ -2,34 +2,31 @@ baconbackup
 ===========
 
 ### About ###
-Node.js tool for archiving a Reddit user's comments.
+Node.js tool for archiving a Reddit user's comments as an HTML file.
+
+Defaults to archiving the maximum number of comments viewable via a user's profile, which is currently 1000.
+
 Tested as working on Node.js v0.10.26.
 
 ### How to Install ###
-This requires [Node.js] and the [restler] HTTP client library.
-The former will have to be downloaded and installed.
-Once that is done, the latter can be installed via this command:
-    
-    npm install restler 
-
+This requires [Node.js].
 [node.js]: http://nodejs.org/
-[restler]: https://github.com/danwrong/restler
 
 ### How to Run ###
 Set the `user` variable to be the handle of the person whose comments you wish to archive.  To use, navigate to the installed directory and run this command:
 
 	node baconbackup.js
     
-### Details ###
+### Speed ###
 
-Currently baconbackup defaults to archiving as many comments as possible *(the upper limit is 1000)*.  At a maximum of 100 comments per page request and a minimum of 2 seconds between page requests, the fastest baconbackup can run through a full backup is **20 seconds**.
+At a maximum of 1000 comments available, a maximum of 100 comments per page request, and a minimum of 2 seconds between page requests, the fastest a full backup can be done is **20 seconds**.
     
 ### License ###
 While obviously open-source, I have yet to decide which license this should be under.  It will probably end up being under the [GPL] or some flavor of [Creative Commons].
 [GPL]: http://www.gnu.org/licenses/licenses.html
 [Creative Commons]: http://creativecommons.org/licenses/
 
-### Origins & Credit Due ###
+### Credit Due ###
 
 Credit goes to [AlliedEnvy] for always being ready with a clever project name.
 [AlliedEnvy]: https://github.com/AlliedEnvy

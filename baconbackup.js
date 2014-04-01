@@ -1,4 +1,4 @@
-var rest = require('restler') // for HTTP requests -- npm install restler : https://github.com/danwrong/Restler/
+var http = require('http') // for comment page requests
   , fs   = require('fs');     // for logging
 
 var baseURL = 'http://www.reddit.com/user/'
@@ -6,8 +6,8 @@ var baseURL = 'http://www.reddit.com/user/'
   , tail    = '/.json?'
   , limit   = 'limit=100'; // set to maximum, to limit page requests; default is 25
 
-var pages = [];
-var nextPage = '';  // will initially return the first page of comments
+var pages = [];     // initialize array of comment pages
+var nextPage = '';  // being blank will initially return the first page of comments
 
 var fileName = '.html';
 
@@ -37,7 +37,8 @@ function writeToFile() {
 	}
 }
 
-function onComplete(DATA, res) {	
+function onComplete(DATA, response) {
+	DATA = JSON.parse(DATA);
 	pages.push(DATA); // add page to array
 	nextPage = DATA.data.after;
 	console.log('next page: ' + nextPage);
@@ -54,7 +55,20 @@ function onComplete(DATA, res) {
 }
 
 function getPage() { 
-	rest.get(baseURL + user + tail + limit + '&after=' + nextPage).once('complete', onComplete);
+	var URL = baseURL + user + tail + limit + '&after=' + nextPage;
+	var data = '';
+	
+	http.get(URL, function(response) {
+		response.on('data', function(chunk) {
+			data += chunk;
+		});
+		response.on('end', function() {
+			onComplete(data);
+		});
+		
+	}).on('error', function(e) {
+		console.log("Error: " + e.message);
+	});
 }
 
-getPage();
+getPage();  // kick it off!
