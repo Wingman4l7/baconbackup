@@ -11,7 +11,7 @@ Tested as working on Node.js v0.10.26.
 ### How to Run ###
 To use, navigate to the installed directory and run this command:
 
-    node baconbackup.js YOUR_USERNAME
+    node baconbackup.js USERNAME
 	
 ### Speed & Options ###
 
@@ -30,8 +30,6 @@ Credit goes to [AlliedEnvy] for always being ready with a clever project name.
 [AlliedEnvy]: https://github.com/AlliedEnvy
 
 ### Donations ###
-Like this script?  You can send Bitcoin donations to: `1F7kfMNUNQy8e52RHnQAWYXeaYfzFqHJAZ`
-
-*Quick reference:* $1 USD is currently: <img src="http://btcticker.appspot.com/mtgox/1.00usd.png">
+Like it?  You can send Bitcoin donations to: `1F7kfMNUNQy8e52RHnQAWYXeaYfzFqHJAZ`
 
 Alternatively, you can use [Gittip](https://www.gittip.com/Wingman4l7/).
